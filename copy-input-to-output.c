@@ -14,9 +14,10 @@ int main ()
 {
 	int c;
 
-	while (c = getchar () != EOF) {
+	c = getchar ();
+	if (c == EOF) {
 		printf ("%d\n", c);
-	}
+	} 
 
-	printf ("%d\n", c);
+	return 0;
 }
