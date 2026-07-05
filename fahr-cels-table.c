@@ -3,8 +3,8 @@
 /* print Fahrenheit-Celsius table for fahr = 0, 20, ..., 300 */
 int main ()
 {
-	int lower, upper, step;
-	int fahr, cels;
+	float lower, upper, step;
+	float fahr, cels;
 
 	lower = 0; /* lower limit of temperature scale */
 	upper = 300; /* upper limit */
@@ -13,8 +13,8 @@ int main ()
 	fahr = lower;
 
 	while (fahr <= upper) {
-		cels = 5 * (fahr-32) / 9;
-		printf ("%d\t%d\n", fahr, cels);
+		cels = (5.0/9.0) * (fahr-32.0);
+		printf ("%.0f\t%.1f\n", fahr, cels);
 		fahr = fahr + step;
 	}
 }
