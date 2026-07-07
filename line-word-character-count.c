@@ -5,21 +5,23 @@
 
 int main ()
 {
-	int c, nl, nc, nw, state;
+	int c, nl, nc, nw, state, pr;
 
 	state = OUT;
-	nl = nc = nw = 0;
+	nl = nc = nw = pr = 0;
 	while ((c = getchar ()) != EOF) {
 		++nc;
 
 		if (c == '\n')
 			++nl;
-		if (c == ' ' || c == '\t' || c == '\n')
+		else if (c == ' ' || c == '\t' || c == '\n')
 			state = OUT;
-		if (state == OUT) {
+		if (c != ' ' && c != '\t' && c != '\n') {
 			state = IN;
-			++nw;
+			if (pr == ' ' || pr == '\t' || pr == '\n' || pr == 0 )
+				++nw;
 		}
+		pr = c;
 	}
 
 	printf ("%d lines, %d words, %d characters\n", nl, nw, nc);
