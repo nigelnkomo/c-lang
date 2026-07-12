@@ -4,12 +4,21 @@
 #define UPPER 300 /* upper limit */
 #define STEP 20 /* step size */
 
+double fahrToCels (int fahr);
+
 /* print Fahrenheit-Celsius table for fahr = 0, 20, ..., 300 */
 int main ()
 {
 	int fahr;
 
 	for (fahr = UPPER; fahr >= LOWER; fahr = fahr - STEP) {
-		printf ("%3d %6.1f\n", fahr, (5.0/9.0) * (fahr-32));
+		printf ("%3d %6.1f\n", fahr, fahrToCels (fahr));
 	}
+
+	return 0;
+}
+
+double fahrToCels (int fahr) 
+{
+	return (5.0/9.0) * (fahr-32);
 }
