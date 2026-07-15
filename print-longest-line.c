@@ -1,3 +1,11 @@
+/*
+ * while (there's another line)
+ * 	if (it's longer than the previous longest)
+ * 		(save it)
+ * 		(save its length)
+ * print longest line
+ */
+
 #include <stdio.h>
 #define MAXLINE 1000 /* maximum input line length */
 
@@ -24,6 +32,7 @@ int main ()
 	return 0;
 }
 
+/* read a line into s, return length */
 int get_line (char s[], int lim) {
 
 	int i, c;
@@ -39,6 +48,7 @@ int get_line (char s[], int lim) {
 	return i;
 }
 
+/* copy 'from' into 'to'. assume 'to' is big enough. */
 void copy (char to[], char from[]) {
 	int i;
 
